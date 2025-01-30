@@ -7,10 +7,11 @@ from langchain.vectorstores import Chroma
 
 def load_model(llm_key):
     llm = HuggingFaceHub(
-    huggingfacehub_api_token=llm_key,
+    huggingfacehub_api_token = llm_key,
     repo_id="google/flan-t5-large",
     model_kwargs={"temperature": 0.7, "max_length": 200}
     )
+    return llm
 
 
 def download_hugging_face_embeddings(model_name):
